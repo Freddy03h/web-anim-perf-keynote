@@ -145,7 +145,7 @@ const screen = (colorArgs = defaultColors, fontArgs = defaultFonts) => {
         textAlign: "left",
         position: "relative",
         display: "inline-block",
-        margin: 20
+        margin: "40px 20px"
       },
       quote: {
         borderLeft: `1px solid ${colors.tertiary}`,
@@ -211,7 +211,7 @@ const screen = (colorArgs = defaultColors, fontArgs = defaultFonts) => {
         h3: {
           color: "black",
           fontSize: "4.9rem",
-          fontFamily: fonts.secondary,
+          fontFamily: fonts.primary,
           lineHeight: 1,
           fontWeight: "bold",
           margin: "0.5rem auto"

@@ -79,10 +79,10 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Render
           </Heading>
-          <Heading caps fit size={1} textColor="primary">
+          <Heading caps size={1} textColor="primary">
             Engine
           </Heading>
         </Slide>
@@ -97,10 +97,10 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Layout
           </Heading>
-          <Heading caps fit size={1} textColor="primary">
+          <Heading caps size={4} textColor="primary">
             aka. Reflow
           </Heading>
         </Slide>
@@ -125,13 +125,13 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Paint
           </Heading>
         </Slide>
 
         <Slide>
-          <Text bold>Applique tous les styles visuels</Text>
+          <Text bold textAlign="left">Applique tous les styles visuels</Text>
           <List textColor="tertiary">
             <ListItem>background</ListItem>
             <ListItem>color</ListItem>
@@ -144,7 +144,7 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Composite
           </Heading>
         </Slide>
@@ -189,7 +189,7 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Anime
           </Heading>
         </Slide>
@@ -218,10 +218,10 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Web
           </Heading>
-          <Heading caps fit size={1} textColor="primary">
+          <Heading caps size={1} textColor="primary">
             Animation
           </Heading>
         </Slide>
@@ -312,7 +312,7 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <Heading size={4} caps textColor="secondary">
-            caniuse will-change
+            caniuse
           </Heading>
 
           <img src={images.caniusewillchange} />
@@ -321,19 +321,19 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Request
           </Heading>
-          <Heading caps fit size={1} textColor="primary">
+          <Heading caps size={3} textColor="primary">
             Animation
           </Heading>
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Frame
           </Heading>
         </Slide>
 
         <Slide>
-          <Heading size={2} caps textColor="secondary">
+          <Heading size={2} textColor="secondary">
             requestAnimationFrame
           </Heading>
 
@@ -355,7 +355,7 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <Heading size={4} caps textColor="secondary">
-            caniuse requestAnimationFrame
+            caniuse
           </Heading>
 
           <img src={images.caniuseraf} />
@@ -389,11 +389,11 @@ export default class Presentation extends React.Component {
         />
 
         <Slide>
-          <Heading size={4} caps textColor="secondary">
+          <Heading size={4} textColor="secondary">
             requestAnimationFrame
           </Heading>
 
-          <Text textColor="tertiary">Problème: c'est du JS,<br/>et est donc soumis à l'Event Loop car dans la Main Thread</Text>
+          <Text textColor="tertiary">C'est du JS, donc soumis à l'Event Loop</Text>
 
           <iframe width="840" height="630" src="http://jsbin.com/gamenur/embed?output" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
         </Slide>
@@ -401,13 +401,13 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             Web
           </Heading>
-          <Heading caps fit size={1} textColor="primary">
+          <Heading caps size={3} textColor="primary">
             Animations
           </Heading>
-          <Heading caps fit size={1} textColor="tertiary">
+          <Heading caps size={1} textColor="tertiary">
             API
           </Heading>
         </Slide>
@@ -459,7 +459,7 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <Heading size={4} caps textColor="secondary">
-            caniuse Web Animations API
+            caniuse
           </Heading>
 
           <img src={images.caniuseanim} />
@@ -498,11 +498,12 @@ export default class Presentation extends React.Component {
             <ListItem><Link href="http://csstriggers.com/" target="_blank">CSS Triggers</Link></ListItem>
             <ListItem><Link href="http://jankfree.org/" target="_blank">Jank Free</Link></ListItem>
             <ListItem><Link href="https://github.com/web-animations/web-animations-js" target="_blank">Polyfill Web Animation API</Link></ListItem>
+            <ListItem><Link href="https://github.com/wuct/raf-throttle" target="_blank">Throttle a function by requestAnimationFrame</Link></ListItem>
           </List>
         </Slide>
 
         <Slide>
-          <Heading size={2} caps textColor="tertiary">
+          <Heading size={1} caps textColor="tertiary">
             Merci
           </Heading>
           <Heading size={5} caps textColor="secondary" margin="3em 0 0">
@@ -511,7 +512,7 @@ export default class Presentation extends React.Component {
               @harrisfreddy
             </Link>
           </Heading>
-          <Heading size={6} caps textColor="tertiary">
+          <Heading size={6} caps textColor="tertiary" margin="1em 0 0.5em">
             Freelance React Mobile Progressive Web App
           </Heading>
         </Slide>
