@@ -25,6 +25,8 @@ import preloader from "spectacle/lib/utils/preloader";
 //import createTheme from "spectacle/lib/themes/default";
 import createTheme from "./theme";
 
+import MobileAnimation from "../components/MobileAnimation";
+
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
@@ -183,7 +185,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <Text>(animation layers)</Text>
+          <MobileAnimation />
         </Slide>
 
         {/***************************/}
