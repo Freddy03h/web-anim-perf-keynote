@@ -30,6 +30,17 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   renderengine: require("../assets/quicklook-render-engine.png"),
+  newmargindesktop: require("../assets/new-margin-desktop.png"),
+  newmarginmobile: require("../assets/new-margin-mobile.png"),
+  newmarginmobileframe: require("../assets/new-margin-mobile-frame.png"),
+  marginmobile3: require("../assets/margin-mobile-3.png"),
+  newtransformmobile: require("../assets/new-transform-mobile.png"),
+  newtransformwillchangemobile: require("../assets/new-transform-willchange-mobile.png"),
+  caniusewillchange: require("../assets/caniuse-willchange.png"),
+  // toto: require("../assets/toto"),
+  // toto: require("../assets/toto"),
+  // toto: require("../assets/toto"),
+  // toto: require("../assets/toto"),
 };
 preloader(images);
 
@@ -66,10 +77,10 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps size={1} textColor="tertiary">
+          <Heading caps fit size={1} textColor="tertiary">
             Render
           </Heading>
-          <Heading caps size={1} textColor="primary">
+          <Heading caps fit size={1} textColor="primary">
             Engine
           </Heading>
         </Slide>
@@ -84,10 +95,10 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps size={1} textColor="tertiary">
+          <Heading caps fit size={1} textColor="tertiary">
             Layout
           </Heading>
-          <Heading caps size={4} textColor="primary">
+          <Heading caps fit size={1} textColor="primary">
             aka. Reflow
           </Heading>
         </Slide>
@@ -112,7 +123,7 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps size={1} textColor="tertiary">
+          <Heading caps fit size={1} textColor="tertiary">
             Paint
           </Heading>
         </Slide>
@@ -131,7 +142,7 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps size={1} textColor="tertiary">
+          <Heading caps fit size={1} textColor="tertiary">
             Composite
           </Heading>
         </Slide>
@@ -176,7 +187,7 @@ export default class Presentation extends React.Component {
         {/***************************/}
 
         <Slide bgColor="secondary">
-          <Heading caps size={1} textColor="tertiary">
+          <Heading caps fit size={1} textColor="tertiary">
             Anime
           </Heading>
         </Slide>
@@ -204,41 +215,133 @@ export default class Presentation extends React.Component {
 
         {/***************************/}
 
-        {/*<Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+        <Slide bgColor="secondary">
+          <Heading caps fit size={1} textColor="tertiary">
+            Web
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text>
+          <Heading caps fit size={1} textColor="primary">
+            Animation
+          </Heading>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+        <Slide>
+          <Heading size={2} caps textColor="secondary">
+            Web animation
+          </Heading>
+
+          <Text textColor="tertiary">Le but est d'atteindre les 60 FPS (images par seconde)</Text>
+          <Text textColor="tertiary">Soit ~16.6ms entre chaque image</Text>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Framerate
+          </Heading>
+
+          <iframe width="840" height="470" src="https://www.youtube.com/embed/pfiHFqnPLZ4" frameborder="0" allowfullscreen></iframe>
+        </Slide>
+
+        {/***************************/}
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Margin animation
+          </Heading>
+
+          <iframe width="840" height="630" src="http://jsbin.com/yiregu/embed?output" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Margin Desktop
+          </Heading>
+
+          <img src={images.newmargindesktop} />
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Margin Mobile
+          </Heading>
+
+          <img src={images.newmarginmobile} />
+        </Slide>
+
+        <Slide>
+          <img src={images.newmarginmobileframe} />
+          <img src={images.marginmobile3} />
+        </Slide>
+
+        {/***************************/}
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Transform animation
+          </Heading>
+
+          <iframe width="840" height="630" src="http://jsbin.com/vodive/embed?output" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Transform Mobile
+          </Heading>
+
+          <img src={images.newtransformmobile} />
+        </Slide>
+
+        {/***************************/}
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Transform + will-change
+          </Heading>
+
+          <iframe width="840" height="630" src="http://jsbin.com/rolaso/embed?output" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            will-change Mobile
+          </Heading>
+
+          <img src={images.newtransformwillchangemobile} />
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            caniuse will-change
+          </Heading>
+
+          <img src={images.caniusewillchange} />
+        </Slide>
+
+        {/***************************/}
+
+        <Slide bgColor="secondary">
+          <Heading caps fit size={1} textColor="tertiary">
+            Request
+          </Heading>
+          <Heading caps fit size={1} textColor="primary">
+            Animation
+          </Heading>
+          <Heading caps fit size={1} textColor="tertiary">
+            Frame
+          </Heading>
+        </Slide>
+
+        <Slide>
+          <Heading size={2} caps textColor="secondary">
+            requestAnimationFrame
+          </Heading>
+
+          <List textColor="tertiary">
+            <ListItem>Appelé avant le rendu de la frame</ListItem>
+            <ListItem>Regroupe les transformations de la même frame</ListItem>
+            <ListItem>Le callback n'est plus appelé lorsque la page n'est plus visible</ListItem>
           </List>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
-        </Slide>*/}
 
       </Deck>
     );
