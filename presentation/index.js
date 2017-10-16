@@ -14,7 +14,9 @@ import {
   Text,
   Image,
   Code,
+  Link,
 } from "spectacle";
+import CodeSlide from 'spectacle-code-slide'
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -37,9 +39,9 @@ const images = {
   newtransformmobile: require("../assets/new-transform-mobile.png"),
   newtransformwillchangemobile: require("../assets/new-transform-willchange-mobile.png"),
   caniusewillchange: require("../assets/caniuse-willchange.png"),
-  // toto: require("../assets/toto"),
-  // toto: require("../assets/toto"),
-  // toto: require("../assets/toto"),
+  caniuseraf: require("../assets/caniuse-raf.png"),
+  caniuseanim: require("../assets/caniuse-anim.png"),
+  twitter: require("../assets/twitter.png"),
   // toto: require("../assets/toto"),
 };
 preloader(images);
@@ -342,6 +344,177 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../examples/raf.example")}
+          ranges={[
+            { loc: [0, 6], title: "requestAnimationFrame" },
+          ]}
+        />
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            caniuse requestAnimationFrame
+          </Heading>
+
+          <img src={images.caniuseraf} />
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Throttling
+          </Heading>
+
+          <List textColor="tertiary">
+            <ListItem>Ne pas rappeler une fonction avant un 'temps' donné</ListItem>
+            <ListItem>Utile pour des animations basées sur Scroll, Mouse et Touch Events</ListItem>
+            <ListItem>Découple les user events de l'animation</ListItem>
+          </List>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../examples/throttling.example")}
+          ranges={[
+            { loc: [0, 16], title: "Throttling" },
+            { loc: [15, 16], note: "Listen scroll event" },
+            { loc: [2, 5], note: "Store wanted data" },
+            { loc: [0, 1] },
+            { loc: [14, 15], note: "requestAnimationFrame" },
+            { loc: [6, 13], note: "DOM manipulation here" },
+            { loc: [9, 10] },
+          ]}
+        />
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            requestAnimationFrame
+          </Heading>
+
+          <Text textColor="tertiary">Problème: c'est du JS,<br/>et est donc soumis à l'Event Loop car dans la Main Thread</Text>
+
+          <iframe width="840" height="630" src="http://jsbin.com/gamenur/embed?output" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
+        </Slide>
+
+        {/***************************/}
+
+        <Slide bgColor="secondary">
+          <Heading caps fit size={1} textColor="tertiary">
+            Web
+          </Heading>
+          <Heading caps fit size={1} textColor="primary">
+            Animations
+          </Heading>
+          <Heading caps fit size={1} textColor="tertiary">
+            API
+          </Heading>
+        </Slide>
+
+        <Slide>
+          <Heading size={2} caps textColor="secondary">
+            Web Animations API
+          </Heading>
+
+          <List textColor="tertiary">
+            <ListItem>Unification des animations déclaratives et impératives</ListItem>
+            <ListItem>Permet de créer une animation en JavaScript qui fonctionne avec la même efficacité qu'une animation CSS</ListItem>
+          </List>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../examples/waa1.example")}
+          ranges={[
+            { loc: [0, 11], title: "Web Animations API" },
+            { loc: [1, 5], note: "CSS @keyframes" },
+            { loc: [5, 10], note: "CSS animation-*" },
+          ]}
+        />
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../examples/waa2.example")}
+          ranges={[
+            { loc: [0, 15], title: "We can control it !" },
+            { loc: [0, 1], note: ".animate return Animation obj" },
+            { loc: [8, 9] },
+            { loc: [10, 11] },
+            { loc: [11, 12], note: "usefull to go at a precise moment of the anim." },
+            { loc: [13, 14] },
+            { loc: [14, 15] },
+          ]}
+        />
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            Web Animations API
+          </Heading>
+
+          <iframe width="840" height="630" src="http://jsbin.com/lakada/embed?output" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            caniuse Web Animations API
+          </Heading>
+
+          <img src={images.caniuseanim} />
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            References 1/2
+          </Heading>
+
+          <Text textAlign="left">Talks</Text>
+          <List textColor="tertiary" margin="0px 0px 1em">
+            <ListItem><Link textColor="tertiary" href="https://www.youtube.com/watch?v=cpDqc5KPk7U" target="_blank">Animations on Fire</Link></ListItem>
+            <ListItem><Link href="https://www.youtube.com/watch?v=rpNXWxMyzHQ" target="_blank">Delivering 60 FPS in the browser</Link></ListItem>
+          </List>
+
+          <Text textAlign="left">Articles</Text>
+          <List textColor="tertiary" margin="0px 0px 1em">
+            <ListItem><Link href="http://www.html5rocks.com/en/tutorials/speed/layers/" target="_blank">Accelerated Rendering in Chrome</Link></ListItem>
+            <ListItem><Link href="https://developers.google.com/web/fundamentals/performance/rendering/" target="_blank">Rendering performance</Link></ListItem>
+            <ListItem><Link href="https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas" target="_blank">Simplify paint complexity and reduce paint areas</Link></ListItem>
+            <ListItem><Link href="http://www.html5rocks.com/en/tutorials/speed/rendering/" target="_blank">Jank Busting for Better Rendering Performance</Link></ListItem>
+            <ListItem><Link href="http://www.html5rocks.com/en/tutorials/speed/animations/?redirect_from_locale=fr" target="_blank">Leaner, Meaner, Faster Animations with requestAnimationFrame</Link></ListItem>
+            <ListItem><Link href="http://spoike.ghost.io/user-input-framerate-throttling-in-the-browser/" target="_blank">User input framerate throttling in the browser</Link></ListItem>
+            <ListItem><Link href="http://w3c.github.io/web-animations/">W3C Web Animations</Link></ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading size={4} caps textColor="secondary">
+            References 2/2
+          </Heading>
+
+          <Text textAlign="left">Others</Text>
+          <List textColor="tertiary" margin="0px 0px 1em">
+            <ListItem><Link href="http://csstriggers.com/" target="_blank">CSS Triggers</Link></ListItem>
+            <ListItem><Link href="http://jankfree.org/" target="_blank">Jank Free</Link></ListItem>
+            <ListItem><Link href="https://github.com/web-animations/web-animations-js" target="_blank">Polyfill Web Animation API</Link></ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading size={2} caps textColor="tertiary">
+            Merci
+          </Heading>
+          <Heading size={5} caps textColor="secondary" margin="3em 0 0">
+            <Link href="https://twitter.com/HarrisFreddy" textColor="secondary">
+              <img src={images.twitter} style={{border: 'none', boxShadow: 'none', verticalAlign: 'sub', height: 60, margin: 0, marginRight: 15}} />
+              @harrisfreddy
+            </Link>
+          </Heading>
+          <Heading size={6} caps textColor="tertiary">
+            Freelance React Mobile Progressive Web App
+          </Heading>
+        </Slide>
 
       </Deck>
     );

@@ -1,0 +1,11 @@
+element.animate(
+  [
+    {transform: 'translate(200px, -100%)'},
+    {transform: 'translate(200px, '+ innerHeight +'px)'}
+  ],
+  {
+    duration: 1500,
+    iterations: 10,
+    delay: 300
+  }
+);

@@ -1,0 +1,16 @@
+var latestKnownScrollY = 0;
+
+function onScroll() {
+  latestKnownScrollY = window.scrollY;
+}
+
+function update() {
+  requestAnimationFrame(update);
+
+  var currentScrollY = latestKnownScrollY;
+
+  // Drawing code goes here
+}
+
+requestAnimationFrame(update);
+window.addEventListener('scroll', onScroll, false);

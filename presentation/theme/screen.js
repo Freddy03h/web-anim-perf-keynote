@@ -246,7 +246,8 @@ const screen = (colorArgs = defaultColors, fontArgs = defaultFonts) => {
         margin: "0.5rem auto"
       },
       link: {
-        textDecoration: "none"
+        textDecoration: "none",
+        color: colors.tertiary
       },
       listItem: {
         fontSize: "2.66rem"

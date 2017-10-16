@@ -1,0 +1,15 @@
+var animation = element.animate(
+  [
+    {transform: 'initial'},
+    {transform: 'translateX(300px)'}
+  ],
+  1000
+);
+
+animation.play();
+
+animation.pause();
+animation.currentTime = 500;
+
+animation.playbackRate = 0.5;
+animation.reverse();
