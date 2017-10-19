@@ -27,7 +27,7 @@ class MobileAnimation extends React.Component {
     if(step >= 6) classNameMobile += 'step6 '
 
     return (
-      <div>
+      <div style={{transformStyle: 'preserve-3d'}}>
         <div id="mobile" className={classNameMobile}>
 
           <div id="mobile-background"></div>
