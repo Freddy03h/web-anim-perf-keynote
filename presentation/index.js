@@ -503,6 +503,7 @@ export default class Presentation extends React.Component {
             <ListItem><Link href="http://jankfree.org/" target="_blank">Jank Free</Link></ListItem>
             <ListItem><Link href="https://github.com/web-animations/web-animations-js" target="_blank">Polyfill Web Animation API</Link></ListItem>
             <ListItem><Link href="https://github.com/wuct/raf-throttle" target="_blank">Throttle a function by requestAnimationFrame</Link></ListItem>
+            <ListItem><Link href="http://demo.nimius.net/debounce_throttle/" target="_blank">Debounce and Throttle demo</Link></ListItem>
           </List>
         </Slide>
 
